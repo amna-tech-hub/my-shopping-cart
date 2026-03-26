@@ -1,0 +1,130 @@
+/* 1. External Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+/* 2. Tailwind v4 Engine */
+@import "tailwindcss";
+
+/* 3. Global Variables & Theme Setup */
+:root {
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* --- Colors --- */
+  --color-color-1: #AC6AFF;
+  --color-primary: #398A9B;
+  --color-primary2: #808CCD;
+   --color-green: #426235;
+      --color-skyBlue: #4AE4EC;
+--color-teal: #006D6F;
+--color-teal2: #005461;
+
+
+   
+
+  /* --- Typography --- */
+  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-code: var(--font-code), monospace;
+  --font-grotesk: var(--font-grotesk), sans-serif;
+
+  --letter-spacing-tagline: .15em;
+
+  /* --- Spacing --- */
+  --spacing-0_25: 0.0625rem;
+  --spacing-7_5: 1.875rem;
+  --spacing-15: 3.75rem;
+
+  /* --- UI Extras --- */
+  --opacity-15: .15;
+  --border-width-default: 0.0625rem;
+  
+  --z-index-1: 1;
+  --z-index-2: 2;
+  --z-index-3: 3;
+  --z-index-4: 4;
+  --z-index-5: 5;
+
+  --background-image-radial-gradient: radial-gradient(var(--tw-gradient-stops));
+  --background-image-conic-gradient: conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876);
+}
+
+/* 4. Base Styles */
+@layer base {
+  body {
+    background-color: white;
+    color: var(--color-n-1);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+    
+  }
+  h1{
+    font-family: var(--font-grotesk);
+  }
+}
+
+/* 5. Custom Utilities & Classes */
+@utility container {
+  max-width: 77.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  @variant md { padding-left: 2.5rem; padding-right: 2.5rem; }
+  @variant lg { padding-left: 3.75rem; padding-right: 3.75rem; }
+  @variant xl { max-width: 87.5rem; }
+}
+
+@utility h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  
+  @variant md { font-size: 2.75rem; line-height: 3.75rem; }
+  @variant lg { font-size: 3.25rem; line-height: 4.0625rem; }
+  @variant xl { font-size: 3.75rem; line-height: 4.5rem; }
+}
+
+@utility h2 {
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  @variant md { font-size: 2rem; line-height: 2.5rem; }
+  @variant lg { font-size: 2.5rem; line-height: 3.5rem; }
+  @variant xl { font-size: 3rem; line-height: 1.2; }
+}
+
+@utility tagline {
+  font-family: var(--font-grotesk);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@utility body-1 {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  @variant md { font-size: 1rem; line-height: 1.75rem; }
+  @variant lg { font-size: 1.25rem; line-height: 2rem; }
+}
+
+@utility button {
+  /* font-family: var(--font-code); */
+  font-size: 0.75rem;
+  font-weight: 700;
+  /* letter-spacing: 0.05em; */
+  cursor: pointer !important;
+}
+
+/* 6. Rotation Utilities (Custom) */
+@utility rotate-45 { transform: rotate(45deg); }
