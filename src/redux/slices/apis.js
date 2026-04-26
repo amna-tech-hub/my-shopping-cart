@@ -1,5 +1,5 @@
-// # All products
-// https://fakestoreapi.com/products
+// # All productshttps://fakestoreapi.com/products
+// 
 
 // # All categories
 // https://fakestoreapi.com/products/categories

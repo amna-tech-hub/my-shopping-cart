@@ -1,5 +1,5 @@
-import React from "react";
-import Button from '../components/Button'
+import React, { lazy } from "react";
+import Button from "../components/Button";
 import { NavLink } from "react-router-dom";
 import { IoHeartCircleOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,110 +8,117 @@ import { AddCartItems, RemoveCartItems } from "../redux/slices/cartItem";
 import { MdDeleteOutline } from "react-icons/md";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { MdAddShoppingCart } from "react-icons/md";
-function Cart({ items,forfav }) {
- let dispatch=useDispatch()
-//  handle Addfavourites
- function handleFav(item){
-dispatch(AddItems(item))
+const CLD_BASE_URL = "https://res.cloudinary.com/ddkrcxdal/image/fetch/";
+const OPTIMIZATIONS = "f_auto,q_auto,w_400,c_scale/"; 
+// f_auto: best format (WebP), q_auto: compression, w_400: width resize
+function Cart({ items, forfav }) {
+  let dispatch = useDispatch();
+  //  handle Addfavourites
+  function handleFav(item) {
+    dispatch(AddItems(item));
   }
 
   // handle remove favourites
-function removeFav(item){
-dispatch(RemoveItems(item))
+  function removeFav(item) {
+    dispatch(RemoveItems(item));
   }
 
   //  handle AddToCart
- function handleAddCart(item){
-dispatch(AddCartItems(item))
-console.log("added!");
-
+  function handleAddCart(item) {
+    dispatch(AddCartItems(item));
+    console.log("added!");
   }
 
   // handle removeFromCart
-function removeFromCart(item){
-dispatch(RemoveCartItems(item))
-console.log("removed!");
-
+  function removeFromCart(item) {
+    dispatch(RemoveCartItems(item));
+    console.log("removed!");
   }
-  let AllFavitems=useSelector(state=>state.favourites.items)
-    let AllCartItems=useSelector(state=>state.cartItem.items)
-
+  let AllFavitems = useSelector((state) => state.favourites.items);
+  let AllCartItems = useSelector((state) => state.cartItem.items);
 
   return (
-    <>
+   <>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+    {items &&
+      items.map((item) => {
+        const isAlredyFav = AllFavitems?.some((obj) => obj.id == item.id);
+        const isAlreadyInCart = AllCartItems?.some((obj) => obj.id == item.id);
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+        return (
+          <div
+            className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden"
+            key={item.id}
+          >
+            {/* Image Container */}
+            <div className="relative h-64 w-full bg-gray-50 p-4 overflow-hidden">
+              <img
+                className="h-full w-full object-contain mix-blend-multiply transform group-hover:scale-105 transition-transform duration-500"
+                src={`${CLD_BASE_URL}${OPTIMIZATIONS}${item.image}`}
+                alt={item.title}
+                loading="lazy"
+              />
+              
+              {/* Floating Favorite Button */}
+              <button 
+                onClick={() => isAlredyFav ? removeFav(item) : handleFav(item)}
+                className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-md text-teal-600 hover:bg-teal-600 hover:text-white transition-colors"
+              >
+                {isAlredyFav ? <MdDeleteOutline size={22} /> : <IoHeartCircleOutline size={22} />}
+              </button>
+            </div>
 
-      {items  &&
-        items.map((item) => {
+            {/* Content Section */}
+            <div className="p-4 flex flex-col flex-grow">
+              <h2 className="text-gray-800 font-medium text-sm line-clamp-2 min-h-[40px] mb-2">
+                {item.title}
+              </h2>
 
-      const isAlredyFav=AllFavitems?.some((obj)=>
-        (obj.id==item.id  )
-      )
-       const isAlreadyInCart=AllCartItems?.some((obj)=>
-        (obj.id==item.id  )
-      )
-           return(
-            
-      
-             <div className="p-2    rounded border-2 m-2 border-black flex flex-col justify-between" key={item.id}>
-          <img
-            className="h-48 w-full mix-blend-multiply touch-pan-x md:touch-auto pointer-events-none  object-contain md:h-64 md:w-full roundedc border-t2"
-            src={item.image}
-            alt=""
-          />
-         <h2 className="text-teal2 text-balance text-left  line-clamp-3 ">{item.title}</h2>
-         {/* <p className="text-teal2 text-pretty">{item.description}</p> */}
-         <div className="flex justify-between">
-       <div><span className="text-teal2">price</span><span className="text-black mx-2">{item.price}</span></div>  
-       <div className="text-teal2  wrap-anywhere">Rate{item.rating.rate}</div>
-       </div>
-       <div className="text-center">     <NavLink className="text-xs text-teal2 text-center underline hover:text-black transition cursor-pointer" to={`/CartDetails/${item.id}`}>  See More Details</NavLink>
-</div>
-      {/* Footer Section: See Details  */}
-  <div className="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center">
-    <div className="flex gap-3 items-center">
-{/* cart button st */}
-        <Button >
-      {isAlreadyInCart ?
- <span className="text-white cursor-pointer " onClick={()=>removeFromCart(item)}>
-<MdOutlineRemoveShoppingCart  size={30} className="hover:scale-110 transition"/>
-</span>
-:
-          <span className="text-white cursor-pointer " onClick={()=>handleAddCart(item)}>
-          {/* <MdAddShoppingCart  size={30} className="hover:scale-110 transition" /> */}
-          Add to Cart
-</span>}
-   
-    </Button>
-{/* cart btn end */}
-        {/* 'See Details' as a small link */}
-      
-    </div>
+              <div className="flex justify-between items-center mb-4">
+                <div>
+                  <span className="text-xs text-gray-400 block uppercase tracking-wider">Price</span>
+                  <span className="text-lg font-bold text-gray-900">${item.price}</span>
+                </div>
+                <div className="flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-lg">
+                  <span className="text-yellow-600 text-xs font-bold">★ {item.rating.rate}</span>
+                </div>
+              </div>
 
-    <Button >
-      {forfav || isAlredyFav  ?
- <span className="text-white cursor-pointer " onClick={()=>removeFav(item)}>
- <MdDeleteOutline  size={30} className="hover:scale-110 transition" />
-</span>
-:
-          <span className="text-white cursor-pointer " onClick={()=>handleFav(item)}>
-   <IoHeartCircleOutline size={30} className="hover:scale-110 transition" /> 
-</span>}
-   
-    </Button>
+              {/* Action Buttons */}
+              <div className="mt-auto space-y-3">
+                <button
+                  onClick={() => isAlreadyInCart ? removeFromCart(item) : handleAddCart(item)}
+                  className={`w-full py-2.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
+                    isAlreadyInCart 
+                    ? "bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600" 
+                    : "bg-teal-600 text-white hover:bg-teal-700 shadow-md shadow-teal-100"
+                  }`}
+                >
+                  {isAlreadyInCart ? (
+                    <>
+                      <MdOutlineRemoveShoppingCart size={18} />
+                      Remove from Cart
+                    </>
+                  ) : (
+                    "Add to Cart"
+                  )}
+                </button>
 
-  
+                <div className="text-center">
+                  <NavLink
+                    className="text-xs font-medium text-teal-600 hover:text-teal-800 transition"
+                    to={`/CartDetails/${item.id}`}
+                  >
+                    View Details
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
   </div>
-      </div>
-          
-        )}
-    )
-  
-  }
-          </div> 
-
-    </>
+</>
   );
 }
 

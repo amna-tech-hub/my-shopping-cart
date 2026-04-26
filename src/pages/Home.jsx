@@ -1,11 +1,10 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/slices/fetchProduct";
-import Cart from "../components/Cart";
 import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
 import Hero from "../components/Hero";
-
+const Cart=lazy(()=>import('../components/Cart'))
 function Home() {
   const [fetchPro, setFetchPro] = useState([]);
   const dispatch = useDispatch();
@@ -22,8 +21,9 @@ function Home() {
   return (
     <>
     <Hero/>
-  
-      <Cart items={items} forfav={false} />
+  <Suspense fallback={<Spinner/>}>
+          <Cart items={items} forfav={false} />
+  </Suspense>
   
       
     </>

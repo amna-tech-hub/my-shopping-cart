@@ -1,15 +1,21 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import { Outlet } from 'react-router-dom'
-import Footer from '../components/Footer'
+import React from "react";
+import Navbar from "../components/Navbar";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
+import { lazy, Suspense } from "react";
+import Spinner from "../components/Spinner";
+import MobileFooter from "../components/MobileFooter";
 function Layout() {
-  return (<>
-   <div className="bg-teal2 h-4"></div>
-<Navbar/>
-<Outlet/>
-<Footer/>
-</>
-  )
+  return (
+    <>
+      <Navbar />
+      <Suspense fallback={<Spinner />}>
+        <Outlet />
+      </Suspense>
+      <Footer />
+      <MobileFooter />
+    </>
+  );
 }
 
-export default Layout
+export default Layout;

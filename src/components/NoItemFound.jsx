@@ -9,9 +9,9 @@ const NoItemFound = ({ title }) => {
        <TfiFaceSad className='w-20 h-20 fill-gray-800' />
 
       {/* Text Section */}
-      <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+      <h1 className="text-2xl font-semibold text-gray-800 mb-2">
         No {title} Found
-      </h2>
+      </h1>
       <p className="text-gray-500 max-w-xs mb-8">
        Please add to {title} first
       </p>

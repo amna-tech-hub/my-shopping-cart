@@ -12,12 +12,19 @@
   --font-code: "Source Code Pro", monospace;
   --font-grotesk: "Space Grotesk", sans-serif;
   color-scheme: dark;
+  --font-rocket: "Rocket Brush", cursive; /* Ye line add karein */
 }
 
 * {
   scroll-behavior: smooth;
 }
-
+/* Rocket Brush font ko define karein */
+@font-face {
+  font-family: 'Rocket Brush';
+  src: url('/Rocket Brush.otf') format('truetype'); /* Agar .ttf hai to */
+  font-weight: normal;
+  font-style: normal;
+}
 @theme {
   /* --- Colors --- */
   --color-color-1: #AC6AFF;
@@ -62,14 +69,15 @@
   body {
     background-color: white;
     color: var(--color-n-1);
-    font-family: var(--font-sans);
+    font-family:'Inter';
     font-size: 1rem;
     line-height: 1.5;
     overflow-x: hidden;
-    
+    margin: 0;
+  padding: 0;
   }
   h1{
-    font-family: var(--font-grotesk);
+    font-family:var(--font-rocket)
   }
 }
 
@@ -104,7 +112,7 @@
 }
 
 @utility tagline {
-  font-family: var(--font-grotesk);
+ 
   font-weight: 300;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
