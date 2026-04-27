@@ -1,9 +1,12 @@
 import React from "react";
 import Categories from "./Categories";
 import { Link } from "react-router-dom";
+import BestSeller from "./BestSeller";
 function Hero() {
   return (
-    <div >
+     <>
+    <div className="border-b-8 border-teal-900 ">
+   
       {/* main grid */}
       
 <section className="bg-gradient-to-br from-white via-slate-50 to-teal-50/40 px-4 py-16 md:px-8 lg:py-24 max-w-7xl mx-auto relative border-b border-gray-200">        <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-16">
@@ -51,8 +54,8 @@ function Hero() {
     {/* Small Cards */}
     {[
       "camera_tdq5c7.webp",
-      "jwel_jwqceo.jpg",
-      "women_2_zi3ovk.jpg",
+      "jwel_jwqceo.webp",
+      "women_2_zi3ovk.webp",
       "laptop_hy0ake.webp",
     ].map((img, i) => (
       <div
@@ -75,6 +78,8 @@ function Hero() {
       </section>
     
     </div>
+       <BestSeller/>
+      </>
     
   );
 }

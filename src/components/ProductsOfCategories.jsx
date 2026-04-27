@@ -13,6 +13,7 @@ dispatch(category(`${params.item}`))
     },[params,dispatch])
 
     let selector=useSelector(state=>state.category
+     
     )
     let items=selector.items
   return (
