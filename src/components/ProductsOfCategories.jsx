@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import { category } from '../redux/slices/Category';
+import { category } from '../redux/slices/category';
 import Cart from './Cart';
 
 function ProductsOfCategories() {
