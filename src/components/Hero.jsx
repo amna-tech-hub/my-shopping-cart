@@ -44,9 +44,9 @@ function Hero() {
     {/* 1. Feature Image */}
     <div className="sm:col-span-2 sm:row-span-2 overflow-hidden rounded-2xl bg-gray-100 group shadow-xl relative">
       <img
-        src="https://res.cloudinary.com/ddkrcxdal/image/upload/q_auto/f_auto/v1775669854/Men_Model-1_vvljp2.jpg"
+        src="https://res.cloudinary.com/ddkrcxdal/image/upload/q_auto/f_auto/v1775669854/Men_Model-1_vvljp2.webp"
         alt="Model wearing elegant necklace"
-        className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
+        className="w-full h-full object-contain transition-all duration-700 ease-out group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-500" />
     </div>
@@ -61,13 +61,11 @@ function Hero() {
       <div
         key={i}
         className={`hidden sm:block overflow-hidden rounded-2xl bg-gray-100 group shadow-lg
-        transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl
-        ${i % 2 === 0 ? "translate-y-2" : "-translate-y-2"}`}
-      >
+        transform transition duration-500  hover:shadow-2xl  items-center`}      >
         <img
           src={`https://res.cloudinary.com/ddkrcxdal/image/upload/q_auto/f_auto/v1775670${i === 0 ? "509" : i === 1 ? "490" : i === 2 ? "679" : "727"}/${img}`}
           alt="Jewelry item"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
         />
       </div>
     ))}
