@@ -62,7 +62,7 @@ function Cart({ items, forfav }) {
               {/* Floating Favorite Button */}
               <button 
                 onClick={() => isAlredyFav ? removeFav(item) : handleFav(item)}
-                className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-md text-teal-600 hover:bg-teal-600 hover:text-white transition-colors"
+                className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm rounded-3xl shadow-md text-teal-600 hover:bg-teal-600 hover:text-white transition-colors"
               >
                 {isAlredyFav ? <MdDeleteOutline size={22} /> : <IoHeartCircleOutline size={22} />}
               </button>
@@ -70,18 +70,18 @@ function Cart({ items, forfav }) {
 
             {/* Content Section */}
             <div className="p-4 flex flex-col flex-grow">
-              <h2 className="text-gray-800 font-medium text-sm line-clamp-2 min-h-[40px] mb-2">
+              <h2 className="text-gray-800 font-medium text-lg line-clamp-2 min-h-[40px] mb-1">
                 {item.title}
               </h2>
 
               <div className="flex justify-between items-center mb-4">
                 <div>
-                  <span className="text-xs text-gray-400 block uppercase tracking-wider">Price</span>
+                  <span className=" text-gray-600  uppercase tracking-wider mr-2">Price</span>
                   <span className="text-lg font-bold text-gray-900">${item.price}</span>
                 </div>
-                <div className="flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-lg">
+               ' {/* <div className="flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-lg">
                   <span className="text-yellow-600 text-xs font-bold">★ {item.rating.rate}</span>
-                </div>
+                </div>' */}
               </div>
 
               {/* Action Buttons */}

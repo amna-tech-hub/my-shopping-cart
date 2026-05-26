@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { productCategory } from '../redux/slices/productCategory';
 import { NavLink } from 'react-router-dom';
-
+import {bg} from '../constants/aboutdata'
 function Categories() {
   const dispatch = useDispatch();
   const { items, status } = useSelector((state) => state.productCategory);
@@ -39,7 +39,7 @@ function Categories() {
               className="group relative"
             >
               {/* Card Container */}
-              <div className="relative h-40 flex flex-col items-center justify-center p-6 bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:shadow-teal-100 group-hover:-translate-y-2 group-hover:border-teal-200">
+              <div className="relative h-40 flex flex-col items-center justify-center p-6 bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:shadow-teal-100 group-hover:-translate-y-2 group-hover:border-teal-200 ">
                 
                 {/* Floating Icon/Circle Background */}
                 <div className="absolute top-4 right-4 w-8 h-8 bg-teal-50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
