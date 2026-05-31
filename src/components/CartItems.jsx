@@ -80,18 +80,18 @@ function CartItems() {
 
                                             {/* Quantity & Delete */}
                                             <div className="flex flex-row sm:flex-col items-center justify-between sm:justify-end gap-4">
-                                                <div className="flex items-center border rounded-lg bg-gray-50">
+                                                <div className="flex items-center border border-black rounded-lg bg-gray-50">
                                                     <button 
-                                                        className="px-3 py-1.5 hover:bg-gray-200 rounded-l-lg transition font-medium"
+                                                        className="px-3 py-1.5 hover:bg-gray-200 rounded-l-lg transition font-medium text-black"
                                                         onClick={() => dispatch(DecrementQty(item))}
                                                     >
                                                         -
                                                     </button>
-                                                    <span className="px-3 py-1.5 font-medium min-w-[40px] text-center">
+                                                    <span className="px-3 py-1.5 font-medium min-w-[40px] text-center text-black">
                                                         {item.quantity || 1}
                                                     </span>
                                                     <button 
-                                                        className="px-3 py-1.5 hover:bg-gray-200 rounded-r-lg transition font-medium"
+                                                        className="px-3 py-1.5 hover:bg-gray-200 rounded-r-lg transition font-medium text-black"
                                                         onClick={() => dispatch(IncrementQty(item))}
                                                     >
                                                         +

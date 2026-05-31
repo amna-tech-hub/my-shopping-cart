@@ -88,7 +88,7 @@ function Cart({ items, forfav }) {
               <div className="mt-auto space-y-3">
                 <button
                   onClick={() => isAlreadyInCart ? removeFromCart(item) : handleAddCart(item)}
-                  className={`w-full py-2.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
+                  className={`w-full py-2.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer ${
                     isAlreadyInCart 
                     ? "bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-600" 
                     : "bg-teal-600 text-white hover:bg-teal-700 shadow-md shadow-teal-100"
