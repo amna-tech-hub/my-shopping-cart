@@ -38,6 +38,7 @@ function About() {
             About
             <span className="text-teal-400 relative ml-3">
               Us
+              <div className="absolute -bottom-3 left-0 w-full h-1 bg-teal-500 rounded-full"></div>
             </span>
           </h1>
           <div className="w-24 h-1 bg-teal-500 mx-auto mb-4"></div>

@@ -129,7 +129,7 @@ function CartItems() {
                                 <div className="mt-4">
                                     <button 
                                         onClick={() => window.history.back()}
-                                        className="text-teal-600 hover:text-teal-700 font-medium flex items-center gap-2 transition group"
+                                        className="text-teal-600 hover:text-teal-700 font-medium flex items-center gap-2 transition group cursor-pointer"
                                     >
                                         ← Continue Shopping
                                     </button>
@@ -189,7 +189,7 @@ function CartItems() {
                                 </div>
                                 
                                 {/* Trust Badges */}
-                                <div className="mt-4 grid grid-cols-3 gap-2">
+                                {/* <div className="mt-4 grid grid-cols-3 gap-2">
                                     <div className="text-center p-2 bg-white rounded-lg border border-gray-100">
                                         <p className="text-xs font-semibold text-gray-600">✓ Easy Returns</p>
                                     </div>
@@ -199,7 +199,7 @@ function CartItems() {
                                     <div className="text-center p-2 bg-white rounded-lg border border-gray-100">
                                         <p className="text-xs font-semibold text-gray-600">✓ 24/7 Support</p>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </>
