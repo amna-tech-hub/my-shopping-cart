@@ -21,7 +21,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
    <Route path="/" element={<Layout />}>
       <Route path="/" element={<Home />} />
-      <Route path="/Home" element={<Home />} />
       <Route path="/About" element={<About />} />
             <Route path="/CartDetails/:id" element={<CartDetails/>} />
               <Route path="/ProductOfCategories/:item" element={<ProductsOfCategories/>} />

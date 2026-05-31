@@ -1,8 +1,9 @@
  let navlink=[
     {
         Title:'Home',
-        path:'/Home'
+        path:'/'
     },
+    
     {
         Title:'About',
         path:'/About'
