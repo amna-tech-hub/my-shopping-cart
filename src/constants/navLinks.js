@@ -9,7 +9,7 @@
         path:'/About'
     },
      {
-        Title:'fav',
+        Title:'Wishlist',
         path:'/Favourites'
     },
      {

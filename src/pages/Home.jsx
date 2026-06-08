@@ -21,6 +21,7 @@ function Home() {
   return (
     <>
     <Hero/>
+    
   <Suspense fallback={<Spinner/>}>
           <Cart items={items} forfav={false} />
   </Suspense>
