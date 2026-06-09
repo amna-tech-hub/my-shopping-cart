@@ -65,7 +65,7 @@ function Hero() {
         <img
           src={`https://res.cloudinary.com/ddkrcxdal/image/upload/q_auto/f_auto/v1775670${i === 0 ? "509" : i === 1 ? "490" : i === 2 ? "679" : "727"}/${img}`}
           alt="Jewelry item"
-          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
       </div>
     ))}

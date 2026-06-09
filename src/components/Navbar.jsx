@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <>
       {/* big screen */}
-    <div className="hidden md:flex bg- backdrop-blur-md border-b border-gray-200 justify-evenly items-center py-3 sticky top-0 z-50 font-grotesk font-semibold capitalize text-gray-800">
+    <div className="hidden md:flex bg-white border-b border-teal-950 justify-evenly items-center py-3 sticky top-0 z-50 font-grotesk font-semibold capitalize text-gray-800">
   
   <img 
     src="https://res.cloudinary.com/ddkrcxdal/image/upload/q_auto/f_auto/v1775940302/logo_nxr2qj.webp" 

@@ -101,12 +101,12 @@ function CustomerReview() {
                 </div>
 
                 {/* Review Text */}
-                <p className="text-gray-700 text-center italic leading-relaxed  min-h-[100px]">
+                <p className="text-gray-700 text-center italic leading-relaxed  min-h-[10px]">
                   "{rev.text}"
                 </p>
 
                 {/* User Info */}
-                <div className="text-center border-t border-gray-100 pt-5">
+                <div className="text-center   pt-5">
                   <h3 className="font-bold text-gray-900 text-lg mb-1 group-hover:text-teal-600 transition-colors">
                     {rev.name}
                   </h3>
