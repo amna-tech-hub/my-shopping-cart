@@ -9,9 +9,10 @@ function Hero() {
    
       {/* main grid */}
       
-<section className="bg-gradient-to-br from-white via-slate-50 to-teal-50/40 px-4 py-16 md:px-8 lg:py-24 max-w-7xl mx-auto relative border-b border-gray-200">        <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-16">
+<section className="bg-gradient-to-br from-white via-slate-50 to-teal-50/40 px-4 py-16 md:px-8 lg:py-24 max-w-7xl mx-auto relative border-b border-gray-200">     
+   <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-16">
           {/* --- Left Side: Text Content --- */}
-          <div className="flex-1 text-center md:text-left ml-2">
+          <div className="flex-1 text-center md:text-left ">
             {/* Subheading */}
           <span className="inline-block bg-teal-100 text-teal-700 px-4 py-1.5 rounded-full font-semibold text-xs tracking-wider uppercase mb-5">
   New Arrivals
