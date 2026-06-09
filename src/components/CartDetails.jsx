@@ -24,7 +24,7 @@ function CartDetails() {
     <>
       <div className="max-w-6xl mx-auto p-4">
         {/* Main Detail Card */}
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 rounded-2xl p-6 md:p-10 bg-white shadow-sm hover:shadow-md transition-shadow m-3">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 rounded-2xl p-6  m-3">
           {/* Left Content Section (Detail Section) */}
           <div className="flex flex-col justify-between w-full md:w-1/2 space-y-6">
             <div>
